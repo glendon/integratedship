@@ -22,10 +22,6 @@ public class JpaModule extends AbstractModule {
   protected void configure() {
     Config config = ConfigFactory.load(System.getProperty("ENVIRONMENT", "dev"));
     Map<String, String> properties = new HashMap<>();
-    properties.put("javax.persistence.jdbc.driver",
-        config.getString("postgres.driver"));
-    properties.put("javax.persistence.jdbc.url",
-        config.getString("postgres.url"));
     properties.put("javax.persistence.jdbc.user",
         config.getString("postgres.user"));
     properties.put("javax.persistence.jdbc.password",
